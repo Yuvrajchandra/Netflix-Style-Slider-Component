@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.carousel {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  height: 400px;
+  width: 726.6666666667px;
+}
+.carousel .carousel__inner {
+  display: flex;
+  width: 1320px;
+  transition: 0.3s all ease;
+  transform: translateX(0);
+}
+.carousel .carousel__box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: #ddd;
+  transform: translateX(0px);
+}
+.carousel .carousel__box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  transform: scale(1);
+}
+.carousel .carousel__box--enter img {
+  transform: scale(1.5);
+  transition: 0.4s transform;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+}
+.carousel .carousel__box--leave img {
+  transform: scale(1);
+  transition: 0.4s transform;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+}
+.carousel .carousel__box--next {
+  transform: translateX(50px);
+  transition: 0.4s transform ease;
+}
+.carousel .carousel__box--next-leave {
+  transform: translateX(0);
+  transition: 0.4s transform ease;
+}
+.carousel .carousel__box--previous {
+  transform: translateX(-50px);
+  transition: 0.4s transform ease;
+}
+.carousel .carousel__box--previous-leave {
+  transform: translateX(0);
+  transition: 0.3s transform ease;
+}
+.carousel .carousel__box:not(:last-child) {
+  margin-right: 20px;
+}
+.carousel .carousel__control {
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 66.6666666667px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s opacity;
+  outline: 0;
+}
+.carousel .carousel__control--left {
+  left: 0;
+}
+.carousel .carousel__control--right {
+  right: 0;
+}
+.carousel .carousel__control--disabled {
+  opacity: 0;
+}
